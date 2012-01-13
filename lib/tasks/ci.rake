@@ -1,0 +1,1 @@
+task :ci => [:default, :deploy]
