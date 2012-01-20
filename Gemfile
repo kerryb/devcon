@@ -20,6 +20,7 @@ group :test, :development do
   gem "cucumber-rails"
   gem "fuubar"
   gem "fuubar-cucumber", :require => "cucumber/formatter/fuubar"
+  gem "heroku"
   gem "launchy"
   gem "rspec-rails"
   gem "simplecov", :require => false
