@@ -1,5 +1,5 @@
 desc "run local tests, deploy, then run e2e tests"
-task :deploy => [:default, :"deploy:check_committed", :"cucumber:e2e"]
+task :deploy => [:default, :"deploy:check_committed", :"deploy:heroku", :"cucumber:e2e"]
 
 namespace :deploy do
   desc "ensure everything is committed"
