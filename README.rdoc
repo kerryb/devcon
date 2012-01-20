@@ -16,3 +16,4 @@ impractical):
 * Dependencies injected on construction
 * No logic in views
 * Each view only gets a single presenter object
+* Outside-in design (no speculative classes or methods)
