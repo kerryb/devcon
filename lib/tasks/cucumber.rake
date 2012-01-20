@@ -26,6 +26,12 @@ begin
       t.profile = 'wip'
     end
 
+    Cucumber::Rake::Task.new({:e2e => 'db:test:prepare'}, 'Run confidence test against live site') do |t|
+      t.binary = vendored_cucumber_bin
+      t.fork = true # You may get faster startup if you set this to false
+      t.profile = 'e2e'
+    end
+
     Cucumber::Rake::Task.new({:rerun => 'db:test:prepare'}, 'Record failing features and run only them if any exist') do |t|
       t.binary = vendored_cucumber_bin
       t.fork = true # You may get faster startup if you set this to false
