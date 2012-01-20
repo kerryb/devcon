@@ -17,6 +17,8 @@ end
 gem "jquery-rails"
 
 group :test, :development do
+  gem "capybara-screenshot"
+  gem "capybara-webkit"
   gem "cucumber-rails"
   gem "fuubar"
   gem "fuubar-cucumber", :require => "cucumber/formatter/fuubar"

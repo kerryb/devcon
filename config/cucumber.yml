@@ -5,6 +5,7 @@ std_opts = "--format #{ENV['CUCUMBER_FORMAT'] || 'pretty'} --strict"
 %>
 default: <%= std_opts %> features
 rake: --format Cucumber::Formatter::Fuubar features
-ok: --profile rake --tags ~@wip --strict --format html --out log/features_ok.html
-wip: --profile rake --tags @wip:3 --wip --format html --out log/features_wip.html
+ok: --profile rake --tags ~@wip  --tags ~@e2e --strict --format html --out log/features_ok.html
+wip: --profile rake --tags @wip:3 --tags ~@e2e --wip --format html --out log/features_wip.html
+e2e: --profile rake --tags ~@wip  --tags @e2e --strict --format html --out log/features_e2e.html
 rerun: <%= rerun_opts %> --format rerun --out rerun.txt --strict --tags ~@wip
