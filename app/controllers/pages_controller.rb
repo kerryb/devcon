@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
-  def welcome
+  def home
+    @proposals = Proposal.all
   end
 end

@@ -5,4 +5,4 @@ Feature: E2E test (runs against live Heroku server)
   Scenario: E2E confidence test
 
     When I visit the live site
-    Then I should see a welcome page
+    Then I should see some proposals

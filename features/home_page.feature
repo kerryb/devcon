@@ -1,8 +1,6 @@
 Feature: Home page
 
-  Just a placeholder feature to make sure we can see something
-
-  Scenario: Visiting the home page
-
+  Scenario: Proposals are shown on the home page
+    Given some proposals have been made
     When I visit the site
-    Then I should see a welcome page
+    Then I should see the proposal titles
