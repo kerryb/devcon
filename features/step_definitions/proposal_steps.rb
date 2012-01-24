@@ -6,7 +6,7 @@ Then "I should see some proposals" do
 end
 
 Then "I should see the proposal titles" do
-  proposals.each do |proposal|
+  conference.proposals.each do |proposal|
     page.should have_content(proposal.title)
   end
 end
