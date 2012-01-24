@@ -1,4 +1,5 @@
-require File.expand_path("../../../app/models/conference", __FILE__)
+require "fast_spec_helper"
+require "conference"
 
 describe Conference do
   describe "#proposals" do
