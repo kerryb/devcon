@@ -19,7 +19,7 @@ gem "jquery-rails"
 group :test, :development do
   gem "capybara-screenshot"
   gem "capybara-webkit"
-  gem "cucumber-rails"
+  gem "cucumber-rails", require: false
   gem "fuubar"
   gem "fuubar-cucumber", :require => "cucumber/formatter/fuubar"
   gem "heroku"
