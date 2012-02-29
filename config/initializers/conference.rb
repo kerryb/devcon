@@ -1,0 +1,1 @@
+CONFERENCE = Conference.new

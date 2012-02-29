@@ -4,8 +4,4 @@ class Proposal
   def initialize title
     @title = title
   end
-
-  def self.all
-    [new("How to run a DevCon"), new("Robot battles")]
-  end
 end

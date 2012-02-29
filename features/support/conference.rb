@@ -1,6 +1,6 @@
 module ConferenceStepHelper
   def conference
-    @conference ||= Conference.new
+    CONFERENCE
   end
 end
 World ConferenceStepHelper
