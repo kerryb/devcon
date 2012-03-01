@@ -78,7 +78,7 @@ GEM
       ruby-progressbar (~> 0.0.10)
     gherkin (2.9.0)
       json (>= 1.4.6)
-    heroku (2.21.0)
+    heroku (2.21.1)
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
       rubyzip
