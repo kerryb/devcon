@@ -6,4 +6,4 @@ end
 
 Rake.application.remove_task("default")
 
-task :default => [:clean, :spec, :"cucumber:all", :check_coverage]
+task :default => [:clean, :spec, :"cucumber:all"]

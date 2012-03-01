@@ -21,9 +21,8 @@ group :test, :development do
   gem "capybara-webkit"
   gem "cucumber-rails", require: false
   gem "fuubar"
-  gem "fuubar-cucumber", :require => "cucumber/formatter/fuubar"
+  gem "fuubar-cucumber", require: "cucumber/formatter/fuubar"
   gem "heroku"
   gem "launchy"
   gem "rspec-rails"
-  gem "simplecov", :require => false
 end
