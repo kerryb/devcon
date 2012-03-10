@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
   def home
-    @proposals = CONFERENCE.proposals
+    @conference = CONFERENCE.tap do |c|
+      c.submit_proposal(c.new_proposal(title: "How to run a DevCon"))
+      c.submit_proposal(c.new_proposal(title: "Robot battles"))
+    end
   end
 end

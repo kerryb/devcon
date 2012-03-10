@@ -2,12 +2,9 @@ require "spec_helper"
 
 describe PagesController do
   describe "#home" do
-    let(:proposals) { stub }
-    before { CONFERENCE.stub proposals: proposals }
-
-    it "assigns the proposals" do
+    it "assigns the conference" do
       get :home
-      assigns[:proposals].should == proposals
+      assigns[:conference].should == CONFERENCE
     end
   end
 end
