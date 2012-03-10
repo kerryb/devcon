@@ -1,7 +1,7 @@
-Feature: E2E test (runs against live Heroku server)
+Feature: Post-deployment smoke test (runs against Heroku server)
 
   @javascript
-  @e2e
+  @heroku
   Scenario: E2E confidence test
 
     When I visit the live site
