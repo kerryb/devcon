@@ -3,7 +3,7 @@ require "conference"
 
 describe Conference do
   describe "#new_proposal" do
-    let(:proposal) { stub }
+    let(:proposal) { mock }
     before { subject.build_proposals_with ->(args){ proposal } }
 
     it "builds and returns a new proposal" do
@@ -12,16 +12,16 @@ describe Conference do
 
     it "accepts a hash of attributes" do
       args = {foo: 42, bar: "baz"}
-      proposal_factory = mock
+      proposal_factory = mock.stub build: true
       subject.build_proposals_with ->(args){ proposal_factory.build args }
-      proposal_factory.should_receive(:build).with(args)
       subject.new_proposal args
+      proposal_factory.should_have_received(:build).with(args)
     end
   end
 
   describe "#proposals" do
-    let(:proposal_0) { stub submit: true }
-    let(:proposal_1) { stub }
+    let(:proposal_0) { mock submit: true }
+    let(:proposal_1) { mock }
     let(:proposals) { [proposal_0, proposal_1] }
     before do
       subject.build_proposals_with ->(args){ proposals[args] }

@@ -24,5 +24,6 @@ group :test, :development do
   gem "fuubar-cucumber", require: "cucumber/formatter/fuubar"
   gem "heroku"
   gem "launchy"
+  gem "rr"
   gem "rspec-rails"
 end
