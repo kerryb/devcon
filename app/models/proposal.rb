@@ -1,7 +1,6 @@
-class Proposal
-  attr_reader :title
+require_relative "../../lib/active_model/model"
 
-  def initialize attrs
-    @title = attrs[:title]
-  end
+class Proposal
+  include ActiveModel::Model
+  attr_accessor :title
 end

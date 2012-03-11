@@ -1,5 +1,5 @@
 require "fast_spec_helper"
-require "conference"
+require_relative "../../app/models/conference"
 
 describe Conference do
   describe "#new_proposal" do
