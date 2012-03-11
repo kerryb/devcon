@@ -1,24 +1,24 @@
 class Conference
-  attr_reader :proposals
+  attr_reader :sessions
 
   def initialize
-    @proposals = []
+    @sessions = []
   end
 
-  def build_proposals_with factory
-    @proposal_factory = factory
+  def build_sessions_with factory
+    @session_factory = factory
   end
 
-  def new_proposal args = {}
-    proposal_factory.call args
+  def new_session args = {}
+    session_factory.call args
   end
 
-  def submit_proposal proposal
-    @proposals << proposal
+  def suggest_session session
+    @sessions << session
   end
 
   private
-  def proposal_factory
-    @proposal_factory ||= Proposal.public_method(:new)
+  def session_factory
+    @session_factory ||= Session.public_method(:new)
   end
 end
