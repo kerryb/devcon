@@ -1,7 +1,3 @@
-RSpec.configure do |config|
-  config.mock_with :rr
-end
-
 def stub_active_model
   stub_module "ActiveModel::Naming"
   stub_module "ActiveModel::Translation"

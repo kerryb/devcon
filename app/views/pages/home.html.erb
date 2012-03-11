@@ -3,5 +3,14 @@
     <h1>Suggested Sessions</h1>
   </div>
 
-  <%= render @conference.sessions %>
+  <div class="buttons">
+    <a class="btn btn-primary btn-large" href="<%= new_session_path %>">
+      <i class="icon-plus-sign icon-white"></i>
+      Suggest a session
+    </a>
+  </div>
+
+  <div>
+    <%= render @conference.sessions %>
+  </div>
 </section>

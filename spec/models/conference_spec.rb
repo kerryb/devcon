@@ -12,16 +12,16 @@ describe Conference do
 
     it "accepts a hash of attributes" do
       args = {foo: 42, bar: "baz"}
-      session_factory = mock.stub build: true
+      session_factory = stub build: true
       subject.build_sessions_with ->(args){ session_factory.build args }
+      session_factory.should_receive(:build).with(args)
       subject.new_session args
-      session_factory.should_have_received(:build).with(args)
     end
   end
 
   describe "#sessions" do
-    let(:session_0) { mock submit: true }
-    let(:session_1) { mock }
+    let(:session_0) { stub submit: true }
+    let(:session_1) { stub }
     let(:sessions) { [session_0, session_1] }
     before do
       subject.build_sessions_with ->(args){ sessions[args] }

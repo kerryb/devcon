@@ -1,5 +1,6 @@
 Devcon::Application.routes.draw do
   root to: "pages#home"
+  resources :sessions, only: [:new, :create]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

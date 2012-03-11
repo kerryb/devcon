@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/stouset/twitter_bootstrap_form_for.git
+  revision: a1ed21787872a1469d0e57a632f5442e3106d334
+  branch: bootstrap-2.0
+  specs:
+    twitter_bootstrap_form_for (2.0.1.0.rc1)
+      actionpack (~> 3)
+      railties (~> 3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -134,7 +143,6 @@ GEM
       json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rr (1.0.4)
     rspec (2.8.0)
       rspec-core (~> 2.8.0)
       rspec-expectations (~> 2.8.0)
@@ -180,9 +188,6 @@ GEM
       actionpack (>= 3.1)
       less-rails (~> 2.1.6)
       railties (>= 3.1)
-    twitter_bootstrap_form_for (1.0.5)
-      actionpack (~> 3)
-      railties (~> 3)
     tzinfo (0.3.32)
     uglifier (1.2.3)
       execjs (>= 0.3.0)
@@ -204,10 +209,9 @@ DEPENDENCIES
   jquery-rails
   launchy
   rails (= 3.2.2)
-  rr
   rspec-rails
   sass-rails
   simple_form
   twitter-bootstrap-rails
-  twitter_bootstrap_form_for
+  twitter_bootstrap_form_for!
   uglifier
