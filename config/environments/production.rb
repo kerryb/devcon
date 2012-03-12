@@ -58,8 +58,10 @@ Devcon::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  mongo_uri = URI.parse(ENV['MONGOHQ_URL'])
+  mongo_uri = URI.parse(ENV["MONGOHQ_URL"])
   config.mongo_host = mongo_uri.host
   config.mongo_port = mongo_uri.port
   config.mongo_db = mongo_uri.path.gsub /^\//, ""
+  config.mongo_username = mongo_uri.user
+  config.mongo_password = mongo_uri.password
 end
