@@ -2,6 +2,8 @@ source "http://rubygems.org"
 
 gem "rails", "3.2.2"
 
+gem "bson_ext"
+gem "mongo"
 gem "simple_form"
 gem "twitter_bootstrap_form_for",
   git: "https://github.com/stouset/twitter_bootstrap_form_for.git",

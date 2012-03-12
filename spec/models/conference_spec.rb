@@ -12,18 +12,22 @@ describe Conference do
     end
   end
 
-  describe "#sessions" do
-    let(:session_0) { stub submit: true }
-    let(:session_1) { stub }
-    let(:sessions) { [session_0, session_1] }
-    before do
-      subject.build_sessions_with ->(args){ sessions[args] }
-      subject.suggest_session(subject.new_session(0))
-      subject.new_session(1)
+  describe "#suggest_session" do
+    it "saves the session" do
+      session = stub
+      session_store = stub
+      subject.persist_sessions_with session_store
+      session_store.should_receive(:save).with(session)
+      subject.suggest_session session
     end
+  end
 
+  describe "#sessions" do
     it "returns a list of suggested sessions" do
-      subject.sessions.should == [session_0]
+      sessions = stub
+      session_store = stub all: sessions
+      subject.persist_sessions_with session_store
+      subject.sessions.should == sessions
     end
   end
 end

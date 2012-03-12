@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
   def new
     @session = CONFERENCE.new_session
-    CONFERENCE.suggest_session(@session)
   end
 
   def create

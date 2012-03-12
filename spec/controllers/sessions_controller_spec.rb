@@ -1,23 +1,28 @@
 require "spec_helper"
 
 describe SessionsController do
+  let(:session) { stub }
+  let(:conference) { stub }
+  before { subject.conference = conference }
+
   describe "#new" do
+    before { CONFERENCE.stub new_session: session }
+
     it "renders the new template" do
       get :new
       response.should render_template :new
     end
 
     it "assigns a new session" do
-      session = stub
-      CONFERENCE.stub new_session: session
       get :new
       assigns[:session].should == session
     end
   end
 
   describe "#create" do
+    before { CONFERENCE.stub new_session: session, suggest_session: true }
+
     it "adds the session" do
-      session = stub
       session_params = {"title" => "Foo"}
       CONFERENCE.stub(:new_session).with(session_params).and_return session
       CONFERENCE.should_receive(:suggest_session).with(session)

@@ -27,4 +27,8 @@ Devcon::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.mongo_host = "localhost"
+  config.mongo_port = 27017
+  config.mongo_db = "devcon_development"
 end

@@ -36,4 +36,8 @@ Devcon::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  config.mongo_host = "localhost"
+  config.mongo_port = 27017
+  config.mongo_db = "devcon_test"
 end
