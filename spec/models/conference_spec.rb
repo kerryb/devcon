@@ -3,19 +3,12 @@ require_relative "../../app/models/conference"
 
 describe Conference do
   describe "#new_session" do
-    let(:session) { mock }
-    before { subject.build_sessions_with ->(args){ session } }
-
     it "builds and returns a new session" do
-      subject.new_session.should == session
-    end
-
-    it "accepts a hash of attributes" do
+      session = stub
       args = {foo: 42, bar: "baz"}
-      session_factory = stub build: true
+      session_factory = stub.tap {|sf| sf.stub(:build).with(args) { session } }
       subject.build_sessions_with ->(args){ session_factory.build args }
-      session_factory.should_receive(:build).with(args)
-      subject.new_session args
+      subject.new_session(args).should == session
     end
   end
 
