@@ -9,6 +9,10 @@ When "I suggest a session" do
   click_button "Submit"
 end
 
+Then "I should see some suggested sessions" do
+  page.should have_selector("section#sessions h2")
+end
+
 Then "my session suggestion should appear on the home page" do
   page.should have_content("My awesome talk")
 end
