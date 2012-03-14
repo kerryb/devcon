@@ -3,8 +3,8 @@ stub_active_model
 require_relative "../../app/models/session"
 
 describe Session do
-  it "has a title" do
-    subject.title = "foo"
-    subject.title.should == "foo"
-  end
+  subject { Session.new title: "A session", description: "A boring talk" }
+
+  its(:title) { should == "A session" }
+  its(:description) { should == "A boring talk" }
 end

@@ -1,5 +1,6 @@
 <%= twitter_bootstrap_form_for @session, html: {class: "well form-horizontal"} do |f| %>
   <%= f.text_field :title, class: "span8" %>
+  <%= f.text_area :description, class: "span8" %>
   <%= f.actions do %>
     <button type="submit" class="btn btn-success">
       <i class="icon-ok-sign icon-white"></i>

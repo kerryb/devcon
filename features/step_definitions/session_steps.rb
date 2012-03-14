@@ -6,6 +6,7 @@ end
 When "I suggest a session" do
   click_link "Suggest a session"
   fill_in "Title", with: "My awesome talk"
+  fill_in "Description", with: "You don't want to miss this!"
   click_button "Submit"
 end
 
@@ -15,6 +16,7 @@ end
 
 Then "my session suggestion should appear on the home page" do
   page.should have_content("My awesome talk")
+  page.should have_content("You don't want to miss this!")
 end
 
 Then "I should see the suggested session titles" do
