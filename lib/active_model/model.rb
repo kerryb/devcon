@@ -1,23 +1,25 @@
 module ActiveModel
-  # Stolen from edge rails
+  # Based on Rails 4's ActiveModel::Model
   module Model
     def self.included(base)
       base.class_eval do
         extend  ActiveModel::Naming
-        extend  ActiveModel::Translation
-        include ActiveModel::Validations
         include ActiveModel::Conversion
       end
     end
 
-    def initialize(params={})
-      params.each do |attr, value|
-        self.public_send("#{attr}=", value)
-      end if params
+    def initialize(attributes={})
+      attributes.each do |attr, value|
+        public_send("#{attr}=", value) if respond_to?("#{attr}=")
+      end
     end
 
     def persisted?
       false
+    end
+
+    def ==(other)
+      other.class == self.class && other.attributes == attributes
     end
   end
 end

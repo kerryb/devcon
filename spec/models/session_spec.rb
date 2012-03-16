@@ -7,4 +7,5 @@ describe Session do
 
   its(:title) { should == "A session" }
   its(:description) { should == "A boring talk" }
+  its(:attributes) { should == {title: "A session", description: "A boring talk"} }
 end
