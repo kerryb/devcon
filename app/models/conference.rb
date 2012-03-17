@@ -4,7 +4,7 @@ class Conference
   end
 
   def suggest_session session
-    session_store.save session
+    session.save
   end
 
   def sessions
