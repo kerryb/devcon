@@ -1,4 +1,12 @@
-<h2><%= session.title %></h2>
-<div class="description">
-  <%= insert_line_breaks(session.description) %>
+<div class="session well">
+  <h2><%= session.title %></h2>
+  <div class="description">
+    <div class="session-description">
+      <%= insert_line_breaks(session.description) %>
+    </div>
+    <div class="timestamp">
+      Suggested at <%= session.created_at.strftime("%H:%M") %>
+      on <%= session.created_at.strftime("%d %b %Y") %>
+    </div>
+  </div>
 </div>

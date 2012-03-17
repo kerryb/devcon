@@ -15,11 +15,23 @@ describe Conference do
   end
 
   describe "#suggest_session" do
-    let(:session) { stub save: true }
+    let(:session) { stub }
 
-    it "creates a new saved session" do
-      session.should_receive :create_record
+    it "saves the session" do
+<<<<<<< Updated upstream
+      session.should_receive :save
+=======
+      session_store = stub
+      subject.persist_sessions_with session_store
+      session_store.should_receive(:save).with(session)
+>>>>>>> Stashed changes
       subject.suggest_session session
+    end
+
+    xit "sets a timestamp" do
+      timestamp = Time.now
+      subject.suggest_session session
+      session.suggested_at.should == timestamp
     end
   end
 
