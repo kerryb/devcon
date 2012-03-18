@@ -5,6 +5,14 @@ module ActiveModel
       base.class_eval do
         extend  ActiveModel::Naming
         include ActiveModel::Conversion
+
+        # Creates individual accessors and attributes method
+        def self.expose_attributes *attr_names
+          attr_accessor *attr_names
+          define_method :attributes do
+            Hash[attr_names.map {|a| [a, send(a)]}]
+          end
+        end
       end
     end
 
