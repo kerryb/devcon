@@ -4,14 +4,10 @@ require_relative "../../app/models/session"
 
 describe Session do
   describe "attributes" do
-    let(:timestamp) { Time.now }
     let(:attrs) { {title: "A session", description: "A boring talk",
-                   created_at: timestamp} }
-    subject { Session.new attrs }
+                   created_at: Time.now} }
+    subject { Session.new attrs.merge({extra: "should be ignored"}) }
 
-    its(:title) { should == "A session" }
-    its(:description) { should == "A boring talk" }
-    its(:created_at) { should == timestamp }
     its(:attributes) { should == attrs }
   end
 

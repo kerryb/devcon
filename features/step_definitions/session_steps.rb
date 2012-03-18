@@ -19,11 +19,19 @@ Then "my session suggestion should appear on the home page" do
   page.should have_content("You don't want to miss this!")
 end
 
-And "the date and time the session was suggested should be displayed" do
+Then "the date and time the session was suggested should be displayed" do
   session = conference.sessions.last
   date = session.created_at.strftime("%d %b %Y")
   time = session.created_at.strftime("%H:%M")
-  page.should have_content("Suggested at #{time} on #{date}")
+  page.should have_content("at #{time} on #{date}")
+end
+
+Then "the session should show my name" do
+  page.should have_content("Suggested by #{user.name}")
+end
+
+Then "my name should link to my e-mail address" do
+  fail "TODO"
 end
 
 Then "I should see the suggested session titles" do

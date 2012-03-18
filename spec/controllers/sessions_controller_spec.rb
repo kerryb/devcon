@@ -3,7 +3,11 @@ require "spec_helper"
 describe SessionsController do
   let(:session) { stub }
   let(:conference) { stub }
-  before { subject.conference = conference }
+
+  before do
+    fake_login
+    subject.conference = conference
+  end
 
   describe "#new" do
     before { CONFERENCE.stub new_session: session }

@@ -1,0 +1,12 @@
+<%= twitter_bootstrap_form_for(@user, url: login_path,
+                               html: {class: "well form-horizontal"}) do |f| %>
+  <legend> Please log in using your IUSER account</legend>
+  <%= f.text_field :ein %>
+  <%= f.password_field :password %>
+  <%= f.actions do %>
+    <button type="submit" class="btn btn-success">
+      <i class="icon-ok-sign icon-white"></i>
+      Log in
+    </button>
+  <% end -%>
+<% end -%>

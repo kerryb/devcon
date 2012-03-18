@@ -4,6 +4,7 @@ module ActiveModel
     def self.included(base)
       base.class_eval do
         extend  ActiveModel::Naming
+        extend ActiveModel::Translation
         include ActiveModel::Conversion
 
         # Creates individual accessors and attributes method

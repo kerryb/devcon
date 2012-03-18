@@ -1,6 +1,9 @@
 Devcon::Application.routes.draw do
   root to: "pages#home"
   resources :sessions, only: [:new, :create]
+  get "/login" => "login#new", as: :login
+  post "/login" => "login#create", as: :login
+  get "/logout" => "login#destroy", as: :logout
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
