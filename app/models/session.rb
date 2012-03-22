@@ -1,7 +1,7 @@
-require_relative "../../lib/active_model/model"
+require_relative "model"
 
 class Session
-  include ActiveModel::Model
+  include Model
 
   expose_attributes :title, :description, :created_at
 

@@ -1,6 +1,6 @@
-require_relative "../../lib/active_model/model"
+require_relative "model"
 
 class User
-  include ActiveModel::Model
+  include Model
   expose_attributes :ein, :password
 end
